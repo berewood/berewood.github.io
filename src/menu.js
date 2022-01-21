@@ -4,20 +4,11 @@ import {NavLink} from "react-router-dom";
 
 const _Menu = () => (
     <Menu icon='labeled'
+        className="main-menu"
         inverted
-        style={{
-            marginBottom: 0,
-            background: "rgba(0,0,0, 0.5)",
-            marginBottom: "0px"
-        }}
     >
-        <Image style={{position: "fixed", bottom: "25px", left: "10px"}} src="/logo.png" />
-        <Menu.Menu
-            style={{
-                marginLeft: "auto",
-                marginRight: "auto"
-            }}
-        >
+        <Image className="logo" src="/logo.png" />
+        <Menu.Menu>
             <Menu.Item
                 as={NavLink}
                 name="home"

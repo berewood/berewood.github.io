@@ -1,43 +1,30 @@
 import React, {useState, useContext} from "react";
 import {Segment, Form, Button} from "semantic-ui-react";
-import usePin from "./usePin";
 import validatePin from "./auth";
 import {toast} from "react-toastify";
 import { AuthContext } from "./auth";
 
 
-
 const LoginForm = () => {
     const [userPin, setUserPin] = useState("");
-    const [pin, setPin] = useContext(AuthContext);
+    const setPin = useContext(AuthContext)[1];
 
     const handleLogin = () => {
         if (validatePin(userPin)) {
-            setPin(userPin)
+            setPin(userPin);
         } else {
-            toast.error("Invalid PIN, please try again");
+            toast.error("Invalid password, please try again");
             setUserPin("");
         }
-    }
+    };
 
     return (
-        <div className="login-form"
-            style={{
-                marginLeft: "auto",
-                marginRight: "auto",
-                width: "25vw",
-                minWidth: "363px",
-                maxWidth: "500px",
-                display: "flex",
-                flexGrow: 1,
-                alignItems: "center",
-            }}
-        >
-            <Segment style={{width: "100%"}}>
+        <div className="login-form">
+            <Segment>
                 <Form onSubmit={handleLogin}>
                     <Form.Input
                         required
-                        label="Enter the pin"
+                        label="Enter the password to access this site"
                         value={userPin}
                         onChange={(e, {value}) => setUserPin(value)}
                     />
@@ -46,6 +33,6 @@ const LoginForm = () => {
             </Segment>
         </div>
     );
-}
+};
 
 export default LoginForm;

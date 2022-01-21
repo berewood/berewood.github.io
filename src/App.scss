@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url('../public/background.jpg');
+    background-size: cover;
+    background-position: top center;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0,0,0,0);
+}
+
+.main-app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .main-menu.ui.menu {
+        height: 5em;
+        background: rgba(0, 0, 0, 0.5);
+        margin-bottom: 0px;
+        flex-shrink: 0;
+
+        .ui.image.logo {
+            position: fixed;
+            bottom: 25px;
+            left: 10px;
+            max-width: 90vw;
+        }
+
+        .menu {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .login-form {
+        margin-left: auto;
+        margin-right: auto;
+        width: 25vw;
+        min-width: 363px;
+        max-width: 500px;
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+
+        & > .ui.segment {
+            width: 100%;
+        }
+    }
+
+    .donate-cards {
+        .card {
+            img {
+                min-height: 145px;
+            }
+
+        }
+    }
+
+    .active-route {
+        display: flex;
+        align-items: flex-start;
+        flex-grow: 1;
+        // align-items: center;
+        padding: 2em;
+        overflow: auto;
+        box-sizing: border-box;
+        max-height: calc(100vh - 5em);
+
+        .booking-form {
+            margin-left: auto;
+            width: 25vw;
+            min-width: 363px;
+            max-width: 500px;
+        }
+
+        .centered {
+            margin: auto;
+        }
+
+        .compact {
+            max-width: 900px;
+        }
+
+        .google-map-wrapper {
+            height: 300px;
+            width: 100%;
+
+            .marker {
+                color: white;
+                display: flex;
+                font-size: 1.3em;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+  .booking-form {
+      margin-right: auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  .booking-form {
+      margin-right: 10vw;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

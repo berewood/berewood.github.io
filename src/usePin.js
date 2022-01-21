@@ -1,18 +1,18 @@
 
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function usePin() {
-  const getPin = () => {
-    const pin = localStorage.getItem('pin');
-    return pin
-  };
+    const getPin = () => {
+        const pin = localStorage.getItem("pin");
+        return pin;
+    };
 
-  const [pin, setPin] = useState(getPin());
+    const [pin, setPin] = useState(getPin());
 
-  const savePin = pin => {
-    localStorage.setItem('pin', pin);
-    setPin(pin);
-  };
+    const savePin = pin => {
+        localStorage.setItem("pin", pin.toLowerCase());
+        setPin(pin);
+    };
 
-  return [pin, savePin];
+    return [pin, savePin];
 }

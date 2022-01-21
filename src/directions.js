@@ -1,73 +1,43 @@
-import React, {useState, useEffect, useMemo} from "react";
-import {Segment, Form, Button, Dimmer, Header, Icon} from "semantic-ui-react";
-import { DateRange } from 'react-date-range';
-import {NavLink} from "react-router-dom";
-import {validateEmail, daysBetween} from "./utils";
-import FormField from "./form-field";
-import {toast} from "react-toastify";
-import ical from "cal-parser";
-import addDays from 'date-fns/addDays';
-import GoogleMapReact from 'google-map-react';
+import React, {useMemo} from "react";
+import {Segment, Header, Icon} from "semantic-ui-react";
+import GoogleMapReact from "google-map-react";
 import CryptoJS from "crypto-js";
 import usePin from "./usePin";
+import PropTypes from "prop-types";
 
 const ENC = "U2FsdGVkX19/n+iif77Bh6rFS6+TKusCtniKW1Rq7bR3MrwK0/SPknTk6gkXdkmz8S8WP/aahg==";
 
 const info = {
     center: {
-      lat: 50.663917627819615,
-      lng: -3.672083526204176
+        lat: 50.663917627819615,
+        lng: -3.672083526204176
     },
     zoom: 15
-}
+};
 
-const house = {x: 565.578125, y: 245.5, lat: 50.66267989016971, lng: -3.6696588092547056};
-const bridford = {x: 412.578125, y: 144.5, lat: 50.665427351553745, lng: -3.6762248569231626};
 
 const getMapOptions = (maps) => ({
-        streetViewControl: false,
-        scaleControl: true,
-        fullscreenControl: false,
-        // styles: [{
-        //     featureType: "poi.business",
-        //     elementType: "labels",
-        //     stylers: [{
-        //         visibility: "off"
-        //     }]
-        // }],
-        // gestureHandling: "greedy",
-        disableDoubleClickZoom: true,
-        // minZoom: 11,
-        // maxZoom: 18,
-        mapTypeControl: true,
-        mapTypeId: maps.MapTypeId.HYBRID,
-        zoomControl: true,
-        clickableIcons: false
+    streetViewControl: false,
+    scaleControl: true,
+    fullscreenControl: false,
+    disableDoubleClickZoom: true,
+    mapTypeControl: true,
+    mapTypeId: maps.MapTypeId.HYBRID,
+    zoomControl: true,
+    clickableIcons: false
 });
 
 const Marker = ({text, icon}) => (
-    <div
-        style={{
-            color: "white",
-            display: "flex",
-            fontSize: "1.3em",
-        }}
-    >
+    <div className="marker">
         <Icon name={icon} size="large" inverted />
         {text}
     </div>
-)
+);
 
-const Line = () => (
-    <div
-        lat={50.66241423611752}
-        lng={-3.672228977746599}
-    >
-
-    </div>
-)
-
-
+Marker.propTypes = {
+    text: PropTypes.string,
+    icon: PropTypes.string
+};
 
 const handleApiLoaded = (map, maps) => {
     const drivewayCoords = [
@@ -83,34 +53,27 @@ const handleApiLoaded = (map, maps) => {
         strokeWeight: 2,
     });
     drivewayPath.setMap(map);
-}
+};
+
 
 const Directions = () => {
     const [pin] = usePin();
-    const onClick = (props) => {
-        console.log(props)
-    }
-    const onChange = (props) => {
-        console.log(props)
-    }
     const key = useMemo(() => CryptoJS.RC4.decrypt(ENC, pin).toString(CryptoJS.enc.Utf8), [pin]);
 
     return (
-        <Segment style={{marginLeft: "auto", marginRight: "auto"}}>
+        <Segment className="centered">
             <Header content="Directions to Berewood, Bridford from Exeter" />
             <p>Come along the B3193 from A38.</p>
             <p>Turn left following signs to Bridford/The Bridford Inn up Pound Lane.</p>
             <p>1 mile up lane you will enter Bridford. Turn left towards pub (No through road)</p>
             <p>After 20m you will pass a small church, turn immediately left down a narrow track sign posted Christow.</p>
             <p>After 200m track forks, take left hand sign posted Christow. After a further 200m you will see a set of gates and track on the left opposite a garage (highligted in red). This is Berewood</p>
-            <div style={{height: "300px", width: "100%"}}>
+            <div className="google-map-wrapper">
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: key }}
                     defaultCenter={info.center}
                     defaultZoom={info.zoom}
                     options={getMapOptions}
-                    onClick={onClick}
-                    onChange={onChange}
                     yesIWantToUseGoogleMapApiInternals
                     onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
                 >

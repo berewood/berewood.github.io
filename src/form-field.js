@@ -4,7 +4,7 @@ class FormField {
     constructor(id, accessor, suffix) {
         this.id = id;
         this.accessor = accessor;
-        this.suffix = suffix
+        this.suffix = suffix;
     }
 
     process(state) {

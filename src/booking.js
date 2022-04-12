@@ -21,7 +21,7 @@ const fields = [
     // Name
     new FormField("1612885326", state => state.name),
     // Email
-    new FormField("677014387", state => state.email),
+    new FormField("677014387", state => state.email.toLowerCase()),
     // Note
     new FormField("597765592", state => state.note),
     // Start Date
@@ -141,6 +141,7 @@ const BookingForm = () => {
                             name="email"
                             placeholder="user@email.com"
                             value={state.email}
+                            autoCapitalize="none"
                             onChange={handleChange}
                             error={(state.email.length == 0 || validateEmail(state.email)) ? undefined : "Please enter a valid email"}
                         />

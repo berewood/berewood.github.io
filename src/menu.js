@@ -27,6 +27,14 @@ const _Menu = () => (
             </Menu.Item>
             <Menu.Item
                 as={NavLink}
+                name="images"
+                to="/images"
+            >
+                <Icon name="images" />
+                Images
+            </Menu.Item>
+            <Menu.Item
+                as={NavLink}
                 name="book"
                 to="/book"
             >

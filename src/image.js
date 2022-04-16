@@ -82,7 +82,7 @@ const ImagePreview = ({children}) => {
         <React.Fragment>
             <SemImage.Group size="medium" className="image-preview-group">
                 {children.map((image, index) => (
-                    <SemImage key={index} src={image.props.src} style={{cursor: "pointer"}} onClick={() => handleOpen(index)} />
+                    <SemImage key={index} src={image.props.src} style={{objectPosition: image.props.objectPosition}} onClick={() => handleOpen(index)} />
                 ))}
             </SemImage.Group>
             <Modal
@@ -123,7 +123,7 @@ ImagePreview.propTypes = {
 };
 
 /* eslint-disable no-unused-vars */
-const Image = ({src, title}) => (
+const Image = ({src, title, objectPosition}) => (
     null
 );
 /* eslint-enable no-unused-vars */
@@ -153,8 +153,8 @@ const Images = () => {
                 <Image src="images/bedroom_2.jpg" title="Double Bedroom 2" />
                 <Image src="images/bedroom_3.jpg" title="Twin Bedroom" />
                 <Image src="images/deer_1.jpg" title="Deer" />
-                <Image src="images/deer_2.jpg" title="Deer" />
-                <Image src="images/deer_3.jpg" title="Deer" />
+                <Image src="images/deer_2.jpg" title="Deer" objectPosition="0px -115px" />
+                <Image src="images/deer_3.jpg" title="Deer" objectPosition="0px -85px" />
             </ImagePreview>
         </Segment>
     );

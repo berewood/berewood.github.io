@@ -103,7 +103,7 @@ const About = () => {
                 We are very happy to be able to let others use the house and do not want any money for the use,
                 but some people have said they would prefer to contribute and so we suggest a contribution to one of these charities:
             </p>
-            <Card.Group itemsPerRow="3" className="donate-cards">
+            <Card.Group itemsPerRow="3" stackable className="donate-cards">
                 <Card
                     as="a"
                     link

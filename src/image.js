@@ -6,7 +6,7 @@ const ImagePreview = ({children}) => {
     const [open, setOpen] = useState(false);
     const [index, setIndex] = useState(0);
 
-    const [isDragging, setIsDragging] = useState(false);
+    const isDragging = useRef(false);
     const dragCoords = useRef(0);
 
 
@@ -41,12 +41,14 @@ const ImagePreview = ({children}) => {
     };
 
     const handleTouchStart = () => {
-        setIsDragging(true);
+        isDragging.current = true;
     };
 
     const handleTouchMove = (event) => {
+
         const x = event.touches[0].clientX;
-        if (isDragging) {
+        // console.log("YEAH", dragCoords);
+        if (isDragging.current) {
             if (dragCoords.current === 0) {
                 dragCoords.current = x;
                 return;
@@ -54,18 +56,18 @@ const ImagePreview = ({children}) => {
             const offset = x - dragCoords.current;
             if (Math.abs(offset) > 30) {
                 if (Math.sign(offset) === -1) {
-                    // Going to left
-                    navigate("left");
-                } else {
+                    // Going to right
                     navigate("right");
+                } else {
+                    navigate("left");
                 }
-                setIsDragging(false);
+                isDragging.current = false;
             }
         }
     };
 
     const handleTouchEnd = () => {
-        setIsDragging(false);
+        isDragging.current = false;
         dragCoords.current = 0;
     };
 
@@ -78,7 +80,7 @@ const ImagePreview = ({children}) => {
 
     return (
         <React.Fragment>
-            <SemImage.Group size="medium" style={{textAlign: "center"}}>
+            <SemImage.Group size="medium" className="image-preview-group">
                 {children.map((image, index) => (
                     <SemImage key={index} src={image.props.src} style={{cursor: "pointer"}} onClick={() => handleOpen(index)} />
                 ))}
@@ -91,16 +93,17 @@ const ImagePreview = ({children}) => {
                 className="image-modal"
                 onClose={() => setOpen(false)}
             >
-                <Modal.Content>
+                <Modal.Content
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                >
                     <button name="left" className="image-navigate left" icon="arrow left" onClick={() => navigate("left")} />
                     <button name="right" className="image-navigate right" icon="arrow right" onClick={() => navigate("right")} />
                     <figure>
                         <SemImage
                             src={children[index].props.src} centered
                             draggable={false}
-                            onTouchStart={handleTouchStart}
-                            onTouchMove={handleTouchMove}
-                            onTouchEnd={handleTouchEnd}
                         />
                         <figcaption>
                             <div>

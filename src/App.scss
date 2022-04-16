@@ -1,10 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background: url('../public/background.jpg');
-    background-size: cover;
-    background-position: top center;
+    height: 100vh;
 }
 
 ::-webkit-scrollbar-corner {
@@ -12,11 +9,16 @@ body {
 }
 
 .main-app {
+    background: url('../public/background.jpg');
+    background-size: cover;
+    background-position: top center;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    height: 100vh;
 
     .main-menu.ui.menu {
+        overflow: auto;
         height: 5em;
         background: rgba(0, 0, 0, 0.5);
         margin-bottom: 0px;
@@ -99,7 +101,13 @@ body {
                 font-size: 1.3em;
             }
         }
-
+        .image-preview-group {
+             text-align: center;
+             img {
+                 max-height: 135px;
+                 object-fit: cover;
+             }
+        }
     }
 }
 .modal.image-modal {

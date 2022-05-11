@@ -10,7 +10,6 @@ export const daysBetween = ([startDate, endDate]) => {
         dates.push(new Date(date));
         date = addDays(date, 1);
     }
-    console.log(dates);
 
     return dates;
 };

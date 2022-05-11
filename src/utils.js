@@ -1,11 +1,14 @@
+import addDays from "date-fns/addDays";
+
+
 export const daysBetween = ([startDate, endDate]) => {
     if (startDate > endDate) return false;
     var date = new Date(startDate);
     var dates = [];
 
-    while (date <= endDate) {
+    while (date < endDate) {
         dates.push(new Date(date));
-        date.setDate(date.getDate() + 1);
+        date = addDays(date, 1);
     }
 
     return dates;

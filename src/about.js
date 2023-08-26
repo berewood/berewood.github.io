@@ -25,8 +25,7 @@ const About = () => {
                 The property has a large dining table that can seat up to 10 people.
             </p>
             <p>
-                There is a fully functioning kitchen with a cooker that uses gas. The 2 gas bottles are at the
-                side of the house and should be full, but if you have any problems, let us know.
+                There is a fully functioning kitchen with an electric hob/oven and Aga.
                 There is a dishwasher. There may be quite a bit of food left in the kitchen cupboards
                 and freezer. Feel free to use any of it if you want to – as we go down once a month,
                 we do leave some things there.
@@ -34,6 +33,9 @@ const About = () => {
             <p>
                 The utility room has a fridge freezer and a washing machine. The tumble dryer is in the garage.
                 Also in the garage, there are 4 black sun lounger seats – hopefully you will get some sun!
+            </p>
+            <p>
+                The side boundary to the property is the grass bank outside of the extension and down to the road.
             </p>
             <p>
                 If you don’t have dogs with you, just take the throws of the sofas whilst you stay there and
@@ -47,9 +49,14 @@ const About = () => {
             <p>
                 WiFi is available, and the password can be found on the router which is in the corner of the twin bedroom.
             </p>
+            <Header as="h3" content="Hot tub" />
+            <p>
+                There is a hot tub that you are welcome to use during your stay. All the instructions are in a medium-size green storage box on top of the tumble dryer.
+                Please read carefully and following the instructions provided.
+            </p>
             <Header as="h3" content="Food and dining out" />
             <p>
-                The nearest shop is in Christow, but it only opens between 10 am and 3 pm. Exeter is only 25
+                The nearest shop is in <a href="https://goo.gl/maps/SsNaohStMwKGJ53t6">Dunsford</a>, and generally opens 8am-4pm. Exeter is only 25
                 mins away which has both an Aldi and Sainsburys. We highly recommend the fresh eggs that can be bought
                 from a house at the bottom of Pound Lane to Bridford on the left. Milk can be bought from the dairy — as
                 you come off the main Exeter road towards the house you may have noticed a sign for a dairy.
@@ -107,7 +114,7 @@ const About = () => {
                 <Card
                     as="a"
                     link
-                    image="/teen_challenge.jpg"
+                    image="/teen_challenge.png"
                     header="Teen Challenge UK"
                     description="Teen Challenge UK helps people trapped by addiction and other life controlling problems such as drugs and alcohol."
                     href="http://www.teenchallenge.org.uk"
@@ -135,6 +142,7 @@ const About = () => {
                     rel="noopener noreferrer"
                 />
             </Card.Group>
+            <br />
             <p>
                 There is no obligation to though and we hope you have a wonderful stay in Devon.
             </p>

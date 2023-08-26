@@ -1,5 +1,5 @@
 import React, {useMemo} from "react";
-import {Segment, Header, Icon} from "semantic-ui-react";
+import {Segment, Header, Icon, Image} from "semantic-ui-react";
 import GoogleMapReact from "google-map-react";
 import CryptoJS from "crypto-js";
 import usePin from "./usePin";
@@ -62,12 +62,19 @@ const Directions = () => {
 
     return (
         <Segment className="centered">
+            <a target="_blank" rel="noopener noreferrer" href="https://what3words.com/fluctuate.exact.stun">
+                <div style={{display: "flex", alignItems: "center"}}>
+                    <Image size="small" src="/what3words.png" style={{borderRight: "1px solid", paddingRight: "1em", marginRight: "1em"}}/>
+                    fluctuate.exact.stun
+                </div>
+            </a>
             <Header content="Directions to Berewood, Bridford from Exeter" />
             <p>Come along the B3193 from A38.</p>
             <p>Turn left following signs to Bridford/The Bridford Inn up Pound Lane.</p>
             <p>1 mile up lane you will enter Bridford. Turn left towards pub (No through road)</p>
             <p>After 20m you will pass a small church, turn immediately left down a narrow track sign posted Christow.</p>
             <p>After 200m track forks, take left hand sign posted Christow. After a further 200m you will see a set of gates and track on the left opposite a garage (highligted in red). This is Berewood</p>
+            <Header>Google Map <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/NdmTwyhxHaRF8kT16"><Icon name="map" /></a></Header>
             <div className="google-map-wrapper">
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: key }}
@@ -91,6 +98,12 @@ const Directions = () => {
                     />
                 </GoogleMapReact>
             </div>
+            <Header content="Pound lane to Berewood Video" />
+            <p>The following video outlines the turns you should take when travelling into Bridford from Pound Lane.</p>
+            <video width="550" controls>
+                <source src="/videos/directions.mp4" type="video/mp4" />
+                Your browser does not support video playback
+            </video>
         </Segment>
     );
 };

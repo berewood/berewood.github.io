@@ -139,6 +139,9 @@ const Images = () => {
         <Segment className="centered compact">
             <Header as="h2" content="Images" />
             <ImagePreview>
+                <Image src="images/patio.jpg" title="Dining Patio" />
+                <Image src="images/hot_tub_1.jpg" title="Hot Tub" />
+                <Image src="images/hot_tub_2.jpg" title="Hot Tub" />
                 <Image src="images/garden.jpg" title="Garden" />
                 <Image src="images/garden_2.jpg" title="Garden" />
                 <Image src="images/woods_1.jpg" title="Garden (Woods)" />

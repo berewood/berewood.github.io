@@ -16,7 +16,7 @@ const About = () => {
                 The heating can be turned on to continuous or twice a day. It will be set to come on
                 for 30 mins twice a day when you arrive, but you may need it longer. Instructions are
                 inside the airing cupboard on top landing. Pull down the display flap and you will
-                see 3 buttons. One is upstairs heating, one is downstairs and one is for hot water.
+                see 3 buttons. One is upstairs heating, one is downstairs and the other is for hot water.
             </p>
             <p>
                 An information folder is inside the drawer of the cupboard to the left as you walk in to the dining room area.
@@ -25,17 +25,17 @@ const About = () => {
                 The property has a large dining table that can seat up to 10 people.
             </p>
             <p>
-                There is a fully functioning kitchen with an electric hob/oven and Aga.
-                There is a dishwasher. There may be quite a bit of food left in the kitchen cupboards
+                There is a fully functioning kitchen with an electric hob/oven, Aga and dishwasher.
+                There may be quite a bit of food left in the kitchen cupboards
                 and freezer. Feel free to use any of it if you want to – as we go down once a month,
-                we do leave some things there.
+                we do leave some things there. Feel free to leave any non-expiring leftover food you have for future guests.
             </p>
             <p>
-                The utility room has a fridge freezer and a washing machine. The tumble dryer is in the garage.
+                The utility room has a fridge freezer and a washing machine, and you will find a tumble dryer in the garage.
                 Also in the garage, there are 4 black sun lounger seats – hopefully you will get some sun!
             </p>
             <p>
-                The side boundary to the property is the grass bank outside of the extension and down to the road.
+                The side boundary to the property is the grass bank outside of the extension (by the swing) and down to the road.
             </p>
             <p>
                 If you don’t have dogs with you, just take the throws of the sofas whilst you stay there and
@@ -52,14 +52,14 @@ const About = () => {
             <Header as="h3" content="Hot tub" />
             <p>
                 There is a hot tub that you are welcome to use during your stay. All the instructions are in a medium-size green storage box on top of the tumble dryer.
-                Please read carefully and following the instructions provided.
+                Please read carefully and follow the instructions provided.
             </p>
             <Header as="h3" content="Food and dining out" />
             <p>
                 The nearest shop is in <a href="https://goo.gl/maps/SsNaohStMwKGJ53t6">Dunsford</a>, and generally opens 8am-4pm. Exeter is only 25
                 mins away which has both an Aldi and Sainsburys. We highly recommend the fresh eggs that can be bought
-                from a house at the bottom of Pound Lane to Bridford on the left. Milk can be bought from the dairy — as
-                you come off the main Exeter road towards the house you may have noticed a sign for a dairy.
+                from a <a href="https://goo.gl/maps/6gBerNTFvGngTGSX6">house at the bottom of Pound Lane</a> to Bridford on the left (just hold on to the egg boxes). They are usually available during the day for £1.20 a 1/2 dozen. Milk can be bought from the dairy — as
+                you come off the main Exeter road towards the house you may have noticed a sign for a <a href="https://goo.gl/maps/uC7muvLjdox8puzA7">dairy</a>.
                 This has a 24 hour self service machine and you can take your own bottle or buy one to re fill at £1.20 per litre.
             </p>
             <p>
@@ -83,7 +83,7 @@ const About = () => {
             <Header as="h3" content="Cleaning" />
             <p>
                 The cleaning contractors can be pre booked and charge approx £80 if you want to use them after your stay. If this is the case, please let us know.
-                Otherwise, the hoover is under the stairs!
+                Otherwise, the vacuum is under the stairs and cleaning products are found under the sink.
             </p>
             <p>
                 <b>Bedding</b> - If you want to take your own bedding, there are 3 kingsize beds and 2 singles.
@@ -108,16 +108,17 @@ const About = () => {
             </p>
             <p>
                 We are very happy to be able to let others use the house and do not want any money for the use,
-                but some people have said they would prefer to contribute and so we suggest a contribution to one of these charities:
+                however we hope as an alternative you would consider making a contribution to one of the following charities we support:
             </p>
             <Card.Group itemsPerRow="3" stackable className="donate-cards">
                 <Card
                     as="a"
                     link
                     image="/teen_challenge.png"
-                    header="Teen Challenge UK"
+                    className="padded-card-image"
+                    header="Teen Challenge UK (Dorset)"
                     description="Teen Challenge UK helps people trapped by addiction and other life controlling problems such as drugs and alcohol."
-                    href="http://www.teenchallenge.org.uk"
+                    href="https://teenchallengedorset.co.uk/"
                     target="_blank"
                     rel="noopener noreferrer"
                 />
@@ -125,6 +126,7 @@ const About = () => {
                     as="a"
                     link
                     image="/tearfund.svg"
+                    className="padded-card-image"
                     header="Tearfund"
                     description="Christian relief and development charity, at work wherever the need is greatest. Ending poverty around the world, empowering the local church to make it happen."
                     href="https://www.tearfund.org"
@@ -146,7 +148,6 @@ const About = () => {
             <p>
                 There is no obligation to though and we hope you have a wonderful stay in Devon.
             </p>
-
         </Segment>
     );
 };

@@ -70,10 +70,10 @@ const Directions = () => {
             </a>
             <Header content="Directions to Berewood, Bridford from Exeter" />
             <p>Come along the B3193 from A38.</p>
-            <p>Turn left following signs to Bridford/The Bridford Inn up Pound Lane.</p>
-            <p>1 mile up lane you will enter Bridford. Turn left towards pub (No through road)</p>
+            <p>Turn left, following the signs to Bridford/The Bridford Inn up Pound Lane.</p>
+            <p>1 mile up the lane you will enter Bridford. Turn left towards the pub (Marked no through road)</p>
             <p>After 20m you will pass a small church, turn immediately left down a narrow track sign posted Christow.</p>
-            <p>After 200m track forks, take left hand sign posted Christow. After a further 200m you will see a set of gates and track on the left opposite a garage (highligted in red). This is Berewood</p>
+            <p>After 200m, the track forks. Here, take the left hand sign posted Christow. After a further 200m you will see a set of gates and track on the left opposite a garage (highligted in red on the map below). This is Berewood</p>
             <Header>Google Map <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/NdmTwyhxHaRF8kT16"><Icon name="map" /></a></Header>
             <div className="google-map-wrapper">
                 <GoogleMapReact

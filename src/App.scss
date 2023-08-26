@@ -58,6 +58,11 @@ body {
                 min-height: 145px;
             }
 
+            &.padded-card-image {
+                img {
+                    padding: 1em;
+                }
+            }
         }
     }
 

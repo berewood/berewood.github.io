@@ -148,12 +148,16 @@ const Images = () => {
                 <Image src="images/woods_2.jpg" title="Garden (Woods)" />
                 <Image src="images/woods_3.jpg" title="Garden (Woods)" />
                 <Image src="images/garden_2.jpg" title="Garden" />
-                <Image src="images/living_room.jpg" title="Living Room" />
+                <Image src="images/extension.jpg" title="Extension" />
                 <Image src="images/kitchen.jpg" title="Kitchen" />
+                <Image src="images/living_room.jpg" title="Living Room" />
                 <Image src="images/dining_room.jpg" title="Dining Room" />
-                <Image src="images/bedroom_4.jpg" title="Master Bedroom (with en suite bathroom)" />
-                <Image src="images/bedroom.jpg" title="Double Bedroom 1 (with en suite bathroom)" />
-                <Image src="images/bedroom_2.jpg" title="Double Bedroom 2" />
+                <Image src="images/extension_rear.jpg" title="Rear extension" />
+                <Image src="images/bedroom_master.jpg" title="Master Bedroom (with en suite bathroom)" />
+                <Image src="images/bedroom_master_2.jpg" title="Master Bedroom (with en suite bathroom)" />
+                <Image src="images/master_view.jpg" title="View from master bedroom" />
+                <Image src="images/bedroom_4.jpg" title="Double Bedroom 1 (with en suite bathroom)" />
+                <Image src="images/bedroom.jpg" title="Double Bedroom 2 (with en suite bathroom)" />
                 <Image src="images/bedroom_3.jpg" title="Twin Bedroom" />
                 <Image src="images/deer_1.jpg" title="Deer" />
                 <Image src="images/deer_2.jpg" title="Deer" objectPosition="0px -115px" />
